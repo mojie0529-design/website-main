@@ -1,0 +1,110 @@
+.container {
+  height: 425px;
+  background-color: #fff;
+
+  :global {
+    .media-container {
+      padding-bottom: 43px;
+    }
+  }
+  .content {
+    height: 100%;
+    @include flex-column(flex-start, flex-start);
+  }
+
+  .copyright {
+    width: 100%;
+    @include flex-row(space-between);
+    color: #888;
+    font-family: PingFang SC;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  .footerRow {
+    width: 100%;
+    @include flex-row(flex-start, flex-start);
+    flex-wrap: nowrap;
+
+    .footerCol {
+      width: auto;
+      font-weight: 600;
+      font-family: PingFang SC;
+      &:not(:last-child) {
+        margin-right: 80px;
+      }
+
+      .colTitle {
+        color: #000;
+        font-size: 18px;
+        font-style: normal;
+        margin-bottom: 10px;
+      }
+      .colDesc {
+        color: #797979;
+        font-size: 16px;
+        line-height: 32px;
+      }
+    }
+
+    .contactCard {
+      @include flex-row;
+      margin-left: auto;
+      > div {
+        width: 85px;
+        height: 85px;
+        flex-shrink: 0;
+        border-radius: 10px;
+        &:not(:last-child) {
+          margin-right: 32px;
+        }
+        .codeText {
+          color: #888;
+          text-align: center;
+          font-family: PingFang SC;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 19.5px; /* 162.5% */
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    height: auto;
+    .content {
+      padding-top: 44px;
+      padding-bottom: 30px;
+    }
+    .footerRow {
+      flex-direction: column;
+      .footerCol {
+        margin-right: 0 !important;
+        .colTitle {
+          font-size: 15px;
+          margin-top: 10px;
+        }
+        .colDesc {
+          font-size: 14px;
+        }
+      }
+
+      .contactCard {
+        margin: 0 auto;
+        > div {
+          @include flex-column;
+          height: auto;
+        }
+      }
+    }
+
+    .copyright {
+      font-size: 12px;
+      line-height: 32px;
+    }
+  }
+}
