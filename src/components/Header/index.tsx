@@ -30,7 +30,7 @@ export const Header: FC<IProps> = (props) => {
     const history = useHistory()
 
     return <div className="header">
-        <img className="logo" src="http://img1.comixai.online/website/logo.png?hash=1"></img>
+        
         {showBtns && <div className="href-list">
             {activeBtns.map(it => {
                 return <div key={it.id} className="href-item" onClick={() => {
