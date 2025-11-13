@@ -18,10 +18,11 @@ export const YCarousel: FC<IProps> = (props) => {
                 <img 
                   src={item.src} 
                   onError={(e) => {
-                    e.currentTarget.src = ""; // 加载失败时设为空
+                    e.currentTarget.src = "";
                   }}
                   alt="" 
                   className={styles.imgItem} 
+                  loading="lazy"  
                 />
                 {descContent && <div className={styles.imgDesc}>
                     {typeof desc !== "string" && desc.title && <div className={styles.descTitle}>{desc.title}</div>}
@@ -37,10 +38,11 @@ export const YCarousel: FC<IProps> = (props) => {
                               key={imgIdx} 
                               src={img.src} 
                               onError={(e) => {
-                                e.currentTarget.src = ""; // 加载失败时设为空
+                                e.currentTarget.src = "";
                               }}
                               alt="" 
                               className={styles.imgItem} 
+                              loading="lazy"  
                             />
                             {img.tag && <div className={styles.imgTag}>{img.tag}</div>}
                         </div>
